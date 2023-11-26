@@ -1,0 +1,15 @@
+AutoScalingGroupName: 'asg-ec2-cwa-asgroup'
+LaunchTemplate:
+  LaunchTemplateName: 'asg-ec2-cwa-template' 
+  Version: '$Latest'
+MinSize: 1
+MaxSize: 2
+DesiredCapacity: 1
+VPCZoneIdentifier: 'subnet-*****************,subnet-*****************,subnet-*****************'
+Tags:
+  - Key: 'name'
+    Value: 'asg-ec2-cwa-asgroup'
+    PropagateAtLaunch: false
+  - Key: 'type'
+    Value: 'practice'
+    PropagateAtLaunch: false

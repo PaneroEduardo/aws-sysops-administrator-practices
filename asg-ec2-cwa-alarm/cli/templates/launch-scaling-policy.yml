@@ -1,0 +1,7 @@
+AutoScalingGroupName: 'asg-ec2-cwa-asgroup'
+PolicyName: 'asg-ec2-cwa-scaling-policy'
+PolicyType: 'SimpleScaling'
+AdjustmentType: 'ChangeInCapacity'
+ScalingAdjustment: 1
+Cooldown: 300
+Enabled: true

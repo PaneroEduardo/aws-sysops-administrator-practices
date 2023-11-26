@@ -1,0 +1,24 @@
+LaunchTemplateName: asg-ec2-cwa-template
+LaunchTemplateData:
+  ImageId: 'ami-*****************'
+  InstanceType: t2.micro
+  TagSpecifications:
+    - ResourceType: instance
+      Tags:
+        - Key: 'name'
+          Value: 'asg-ec2-cwa-instance'
+        - Key: 'type'
+          Value: 'practice'
+    - ResourceType: volume
+      Tags:
+        - Key: 'name'
+          Value: 'asg-ec2-cwa-volume'
+        - Key: 'type'
+          Value: 'practice'
+TagSpecifications:
+  - ResourceType: launch-template
+    Tags:
+      - Key: 'name'
+        Value: 'asg-ec2-cwa-template'
+      - Key: 'type'
+        Value: 'practice'

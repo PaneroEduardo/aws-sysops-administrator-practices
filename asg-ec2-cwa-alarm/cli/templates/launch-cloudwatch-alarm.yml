@@ -1,0 +1,22 @@
+AlarmName: 'asg-ec2-cwa-alarm'
+AlarmDescription: ''
+ActionsEnabled: true
+AlarmActions:
+- 'arn:aws:sns:eu-west-1:************:asg-ec2-cwa-sns'
+- 'arn:aws:autoscaling:eu-west-1:************:scalingPolicy:********-****-****-****-************:autoScalingGroupName/asg-ec2-cwa-asgroup:policyName/asg-ec2-cwa-scaling-policy'
+MetricName: 'CPUUtilization'
+Namespace: 'AWS/EC2'
+Statistic: Average
+Dimensions:
+- Name: 'AutoScalingGroupName'
+  Value: 'asg-ec2-cwa-asgroup'
+Unit: Seconds
+Period: 300
+EvaluationPeriods: 3
+Threshold: 70.0
+ComparisonOperator: GreaterThanOrEqualToThreshold
+Tags:
+- Key: 'name'
+  Value: 'asg-ec2-cwa-alarm'
+- Key: 'type'
+  Value: 'practice'
